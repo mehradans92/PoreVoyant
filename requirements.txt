@@ -2,3 +2,11 @@ langchain
 langchain-openai 
 langchain-community
 openai
+numpy==1.26.4
+pandas==2.2.2
+matplotlib==3.8.4
+matplotlib-inline==0.1.7
+scipy==1.13.0
+torch==2.3.0
+transformers==4.40.2
+PyYAML==6.0.1
