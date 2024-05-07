@@ -125,7 +125,8 @@ def _load_pre_trained_weights(model, mode = 'cgcnn'):
             model_state[name].copy_(param)
         print("Loaded pre-trained model with success.")
     except FileNotFoundError:
-        print("Pre-trained weights not found. Training from scratch.")
+        # print("Pre-trained weights not found. Training from scratch.")
+        pass
 
     return model
 
@@ -141,7 +142,7 @@ if torch.cuda.is_available() and config['gpu'] != 'cpu':
 else:
     device = 'cpu'
     config['cuda'] = False
-print("Running on:", device)
+# print("Running on:", device)
 
 transformer_SMILES = Transformer(**config['Transformer'])
 model_pre = _load_pre_trained_weights(model = transformer_SMILES, mode = 'cgcnn')
