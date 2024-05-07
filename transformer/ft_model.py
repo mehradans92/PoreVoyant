@@ -23,20 +23,6 @@ from MOFormer_modded.transformer import PositionalEncoding
 from torch.nn import TransformerEncoder, TransformerEncoderLayer
 import math
 
-tokenizer = MOFTokenizer("MOFormer_modded/tokenizer/vocab_full.txt")
-config = yaml.load(open("MOFormer_modded/config_ft_transformer.yaml", "r"), Loader=yaml.FullLoader)
-config['dataloader']['randomSeed'] = 0
-
-if torch.cuda.is_available() and config['gpu'] != 'cpu':
-    device = config['gpu']
-    torch.cuda.set_device(device)
-    config['cuda'] = True
-
-else:
-    device = 'cpu'
-    config['cuda'] = False
-print("Running on:", device)
-
 class Transformer(nn.Module):
 
     def __init__(self, ntoken: int, d_model: int, nhead: int, d_hid: int,
@@ -143,14 +129,35 @@ def _load_pre_trained_weights(model, mode = 'cgcnn'):
 
     return model
 
-model = torch.load('full_model_ft_bandgap.pth') #loads finetuned model on band gap for QMOF dataset (done on ~400 data points)
+tokenizer = MOFTokenizer("MOFormer_modded/tokenizer/vocab_full.txt")
+config = yaml.load(open("MOFormer_modded/config_ft_transformer.yaml", "r"), Loader=yaml.FullLoader)
+config['dataloader']['randomSeed'] = 0
 
-def predictBandGap(smiles): #used to have model as an additional argument
+if torch.cuda.is_available() and config['gpu'] != 'cpu':
+    device = config['gpu']
+    torch.cuda.set_device(device)
+    config['cuda'] = True
+
+else:
+    device = 'cpu'
+    config['cuda'] = False
+print("Running on:", device)
+
+transformer_SMILES = Transformer(**config['Transformer'])
+model_pre = _load_pre_trained_weights(model = transformer_SMILES, mode = 'cgcnn')
+model = RegressionTransformer(model = model_pre)
+
+model.load_state_dict(torch.load('model_ft_bandgap.pth'))
+model.to(device)
+#model = torch.load('full_model_ft_bandgap.pth') #loads finetuned model on band gap for QMOF dataset (done on ~400 data points)
+
+def predictBandGap(smiles):
+    model.eval()
     token = np.array([tokenizer.encode(smiles, max_length=512, truncation=True,padding='max_length')])
     token = torch.from_numpy(np.asarray(token))
 
     token = token.to(device)
     return model(token)
 
-#Example use: predictBandGap('[Zn]12.OC(=O)C1=CC=C(C=C1)C(O2)=O') #used to be predictBandGap('[Zn]12.OC(=O)C1=CC=C(C=C1)C(O2)=O', model)
+#Example use: predictBandGap('[Zn]12.OC(=O)C1=CC=C(C=C1)C(O2)=O', model)
 #should return: tensor([[4.0581]], device='cuda:0', grad_fn=<AddmmBackward0>), can just do predictBandGap(smiles, model).item() to extract band gap
