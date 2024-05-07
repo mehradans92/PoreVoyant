@@ -145,12 +145,12 @@ def _load_pre_trained_weights(model, mode = 'cgcnn'):
 
 model = torch.load('full_model_ft_bandgap.pth') #loads finetuned model on band gap for QMOF dataset (done on ~400 data points)
 
-def predictBandGap(smiles, model):
+def predictBandGap(smiles): #used to have model as an additional argument
     token = np.array([tokenizer.encode(smiles, max_length=512, truncation=True,padding='max_length')])
     token = torch.from_numpy(np.asarray(token))
 
     token = token.to(device)
     return model(token)
 
-#Example use: predictBandGap('[Zn]12.OC(=O)C1=CC=C(C=C1)C(O2)=O', model)
+#Example use: predictBandGap('[Zn]12.OC(=O)C1=CC=C(C=C1)C(O2)=O') #used to be predictBandGap('[Zn]12.OC(=O)C1=CC=C(C=C1)C(O2)=O', model)
 #should return: tensor([[4.0581]], device='cuda:0', grad_fn=<AddmmBackward0>), can just do predictBandGap(smiles, model).item() to extract band gap
