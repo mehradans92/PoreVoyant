@@ -200,7 +200,7 @@ print("Running on:", device)
 def predictBandGap(smiles):
     predict_per_model = []
 
-    for i in range(4):
+    for i in range(5):
         transformer_SMILES = Transformer(**config['Transformer'])
         model_pre = _load_pre_trained_weights(model = transformer_SMILES, mode = 'cgcnn')
         model = RegressionTransformer(model = model_pre)
