@@ -187,7 +187,7 @@ if torch.cuda.is_available() and config['gpu'] != 'cpu':
 else:
     device = 'cpu'
     config['cuda'] = False
-print("Running on:", device)
+# print("Running on:", device)
 
 #transformer_SMILES = Transformer(**config['Transformer'])
 #model_pre = _load_pre_trained_weights(model = transformer_SMILES, mode = 'cgcnn')
@@ -218,8 +218,8 @@ def predictBandGap(smiles):
     mean_pred = np.mean(predict_per_model)
     stdev_pred = np.std(predict_per_model)
 
-    print(f'Mean predicted band gap is {mean_pred} eV')
-    print(f'The standard deviation is {stdev_pred} eV')
+    # print(f'Mean predicted band gap is {mean_pred} eV')
+    # print(f'The standard deviation is {stdev_pred} eV')
     return mean_pred, stdev_pred
 
 #Example use: predictBandGap('[Zn]12.OC(=O)C1=CC=C(C=C1)C(O2)=O', model)
