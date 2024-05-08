@@ -13,7 +13,7 @@ from torch.autograd import Variable
 from torch.utils.data import Dataset, DataLoader, random_split
 from torch import nn, Tensor
 
-from MOFormer_modded.transformer import Transformer, TransformerRegressor
+#from MOFormer_modded.transformer import Transformer, TransformerRegressor
 from MOFormer_modded.dataset_modded import MOF_ID_Dataset
 from MOFormer_modded.tokenizer.mof_tokenizer import MOFTokenizer
 import yaml
@@ -22,6 +22,11 @@ from MOFormer_modded.model.utils import *
 from MOFormer_modded.transformer import PositionalEncoding
 from torch.nn import TransformerEncoder, TransformerEncoderLayer
 import math
+
+def get_project_root():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(current_dir)
+    return project_root
 
 class Transformer(nn.Module):
 
@@ -131,9 +136,48 @@ def _load_pre_trained_weights(model, mode = 'cgcnn'):
 
     return model
 
-tokenizer = MOFTokenizer("MOFormer_modded/tokenizer/vocab_full.txt")
-config = yaml.load(open("MOFormer_modded/config_ft_transformer.yaml", "r"), Loader=yaml.FullLoader)
-config['dataloader']['randomSeed'] = 0
+#get relative path to vocab_full.txt
+if os.path.exists('MOFormer_modded/tokenizer/vocab_full.txt'):
+    tokenizer = MOFTokenizer('MOFormer_modded/tokenizer/vocab_full.txt')
+    tokenizer_path = 'MOFormer_modded/tokenizer/vocab_full.txt'
+
+else:
+    abs_dir = os.getcwd()
+    target_file_path = abs_dir + '/transformer/MOFormer_modded/tokenizer/vocab_full.txt'
+    current_dir = os.getcwd()
+
+    relative_path = os.path.relpath(target_file_path, current_dir)
+    tokenizer = MOFTokenizer(relative_path)
+    tokenizer_path = relative_path
+
+#get relative path to config_ft_transformer.yaml
+if os.path.exists('MOFormer_modded/config_ft_transformer.yaml'):
+    config = yaml.load(open('MOFormer_modded/config_ft_transformer.yaml', "r"), Loader=yaml.FullLoader)
+    config['dataloader']['randomSeed'] = 0
+    config_path = 'MOFormer_modded/config_ft_transformer.yaml'
+
+else:
+    abs_dir = os.getcwd()
+    target_file_path = abs_dir + '/transformer/MOFormer_modded/config_ft_transformer.yaml'
+    current_dir = os.getcwd()
+
+    relative_path = os.path.relpath(target_file_path, current_dir)
+    config = yaml.load(open(relative_path, "r"), Loader=yaml.FullLoader)
+    config['dataloader']['randomSeed'] = 0
+    config_path = relative_path
+
+#get relative path to ensemble_models
+if os.path.exists('ensemble_models'):
+    path_to_ensemble = 'ensemble_models/'
+
+else:
+    abs_dir = os.getcwd()
+    target_file_path = abs_dir + '/transformer/ensemble_models/'
+    current_dir = os.getcwd()
+
+    relative_path = os.path.relpath(target_file_path, current_dir)
+    path_to_ensemble = relative_path
+
 
 if torch.cuda.is_available() and config['gpu'] != 'cpu':
     device = config['gpu']
@@ -145,12 +189,12 @@ else:
     config['cuda'] = False
 print("Running on:", device)
 
-transformer_SMILES = Transformer(**config['Transformer'])
-model_pre = _load_pre_trained_weights(model = transformer_SMILES, mode = 'cgcnn')
-model = RegressionTransformer(model = model_pre)
+#transformer_SMILES = Transformer(**config['Transformer'])
+#model_pre = _load_pre_trained_weights(model = transformer_SMILES, mode = 'cgcnn')
+#model = RegressionTransformer(model = model_pre)
 
-model.load_state_dict(torch.load('model_ft_bandgap.pth'))
-model.to(device)
+#model.load_state_dict(torch.load('model_ft_bandgap.pth'))
+#model.to(device)
 #model = torch.load('full_model_ft_bandgap.pth') #loads finetuned model on band gap for QMOF dataset (done on ~400 data points)
 
 def predictBandGap(smiles):
@@ -161,7 +205,7 @@ def predictBandGap(smiles):
         model_pre = _load_pre_trained_weights(model = transformer_SMILES, mode = 'cgcnn')
         model = RegressionTransformer(model = model_pre)
 
-        model.load_state_dict(torch.load(f'ensemble_models/model_ft_bandgap_{i}.pth'))
+        model.load_state_dict(torch.load(path_to_ensemble + f'/model_ft_bandgap_{i}.pth'))
         model.to(device)
 
         model.eval()
