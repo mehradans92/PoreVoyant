@@ -1,0 +1,92 @@
+[
+    {
+        "iteration": 0,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)C(=O)[O-]",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 2.333,
+            "STD Band Gap": 0.231
+        }
+    },
+    {
+        "iteration": 1,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)c3ccccc3C(=O)[O-]",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.934,
+            "STD Band Gap": 0.293
+        }
+    },
+    {
+        "iteration": 2,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)c3ccccc3[N+](=O)[O-]C(=O)[O-]",
+            "Chemical Feasibility": "Invalid",
+            "Mean Band Gap": 1.788,
+            "STD Band Gap": 0.226
+        }
+    },
+    {
+        "iteration": 3,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)c3ccccc3NC(=O)[O-]",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 2.0,
+            "STD Band Gap": 0.091
+        }
+    },
+    {
+        "iteration": 4,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)c3ccccc3c4ccccc4C(=O)[O-]",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.911,
+            "STD Band Gap": 0.262
+        }
+    },
+    {
+        "iteration": 5,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)c3ccccc3c4ccccc4[N+](=O)[O-]C(=O)[O-]",
+            "Chemical Feasibility": "Invalid",
+            "Mean Band Gap": 1.782,
+            "STD Band Gap": 0.215
+        }
+    },
+    {
+        "iteration": 6,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)c3ccccc3c4ccccc4NC(=O)[O-]",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.85,
+            "STD Band Gap": 0.089
+        }
+    },
+    {
+        "iteration": 7,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)c3ccccc3c4ccccc4c5ccccc5C(=O)[O-]",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.84,
+            "STD Band Gap": 0.194
+        }
+    },
+    {
+        "iteration": 8,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)c3ccccc3c4ccccc4c5ccccc5[N+](=O)[O-]C(=O)[O-]",
+            "Chemical Feasibility": "Invalid",
+            "Mean Band Gap": 1.763,
+            "STD Band Gap": 0.201
+        }
+    },
+    {
+        "iteration": 9,
+        "data": {
+            "SMILES": "[Cd].[O-]C(=O)c1ccc2c(c1)ccc(c2)c3ccccc3c4ccccc4c5ccccc5NC(=O)[O-]",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.61,
+            "STD Band Gap": 0.123
+        }
+    }
+]
