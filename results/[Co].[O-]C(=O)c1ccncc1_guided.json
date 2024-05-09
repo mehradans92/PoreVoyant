@@ -1,0 +1,101 @@
+[
+    {
+        "iteration": 0,
+        "data": {
+            "SMILES": "[Co].[O-]C(=O)c1ccncc1",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 0.488,
+            "STD Band Gap": 0.017
+        }
+    },
+    {
+        "iteration": 1,
+        "data": {
+            "SMILES": "[Co].C(=O)c1ccncc1",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 0.491,
+            "STD Band Gap": 0.02
+        }
+    },
+    {
+        "iteration": 2,
+        "data": {
+            "SMILES": "[Co].c1ccncc1",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 0.729,
+            "STD Band Gap": 0.128
+        }
+    },
+    {
+        "iteration": 3,
+        "data": {
+            "SMILES": "[Co].c1ccccc1",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 0.905,
+            "STD Band Gap": 0.243
+        }
+    },
+    {
+        "iteration": 4,
+        "data": {
+            "SMILES": "[Ni].c1ccccc1",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.591,
+            "STD Band Gap": 0.298
+        }
+    },
+    {
+        "iteration": 5,
+        "data": {
+            "SMILES": "[Cu].c1ccccc1",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.305,
+            "STD Band Gap": 0.321
+        }
+    },
+    {
+        "iteration": 6,
+        "data": {
+            "SMILES": "[Ni].c1ccccc1F",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.538,
+            "STD Band Gap": 0.242
+        }
+    },
+    {
+        "iteration": 7,
+        "data": {
+            "SMILES": "[Ni].c1ccccc1Cl",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.804,
+            "STD Band Gap": 0.309
+        }
+    },
+    {
+        "iteration": 8,
+        "data": {
+            "SMILES": "[Ni].c1ccccc1Br",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.822,
+            "STD Band Gap": 0.305
+        }
+    },
+    {
+        "iteration": 9,
+        "data": {
+            "SMILES": "[Ni].c1ccccc1I",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 1.823,
+            "STD Band Gap": 0.297
+        }
+    },
+    {
+        "iteration": 10,
+        "data": {
+            "SMILES": "[Ni].c1ccccc1S",
+            "Chemical Feasibility": "Valid",
+            "Mean Band Gap": 2.027,
+            "STD Band Gap": 0.315
+        }
+    }
+]
