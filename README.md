@@ -7,12 +7,12 @@ https://github.com/mehradans92/PoreVoyant/assets/51170839/55624963-d60e-4cf7-b37
 ![image](https://github.com/mehradans92/PoreVoyant/assets/51170839/a48498f8-1a50-45e7-9a97-e37c001c88ed)
 
 ## Results
-## Experiemnt 1. Using all the tools
-Model's suggestion on MOFs with lower band gap with the domain knowledge extracted from scientifc literature.
+## Experiment 1. Using all the tools
+Model's suggestion on MOFs with lower band gap with the domain knowledge extracted from scientific literature.
 ![image](https://github.com/mehradans92/PoreVoyant/assets/51170839/52e45d8b-f9bf-447c-9016-3b396456d5bd)
 
 ## Experiemnt 2. Removing domain knowledge tool (Tool 1)
-Model's suggestion on MOFs with lower band gap with the GPT-4 knowledge only. We observe manny chemically infeasible suggestion by the model, which confirms the importance of domain knowledge that the agent.
+Model's suggestion on MOFs with lower band gap with the GPT-4 knowledge only. We observe many chemically infeasible suggestions by the model, which confirms the importance of domain knowledge that the agent.
 ![Cd O- C(=O)c1ccc2c(c1)ccc(c2)C(=O) O- _unguided](https://github.com/mehradans92/PoreVoyant/assets/51170839/ec13e9d1-4da2-431e-b99d-fbfba5346b65)
 
 
