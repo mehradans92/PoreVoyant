@@ -18,7 +18,8 @@ Model's suggestion on MOFs with lower band gap with the domain knowledge extract
 
 ## Experiment 2. Removing domain knowledge tool (Tool 1)
 Model's suggestion on MOFs with lower band gap with the GPT-4 knowledge only. We observe many chemically infeasible suggestions by the model, which confirms the importance of domain knowledge that the agent.
-![image](https://github.com/mehradans92/PoreVoyant/assets/51170839/52e45d8b-f9bf-447c-9016-3b396456d5bd)
+![Cd O- C(=O)c1ccc2c(c1)ccc(c2)C(=O) O- _unguided](https://github.com/mehradans92/PoreVoyant/assets/51170839/7d97b8f7-08bf-494c-9e07-f53b600d341b)
+
 
 
 
