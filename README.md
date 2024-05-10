@@ -11,14 +11,15 @@ Our AI agent looks up guidelines for designing low band gap MOFs from research p
 
 ## Results
 
-## Experiment 1. Using all the tools
+## Experiment 1. Using all the tools 
 Model's suggestion on MOFs with lower band gap with the domain knowledge extracted from scientific literature.
-![image](https://github.com/mehradans92/PoreVoyant/assets/51170839/52e45d8b-f9bf-447c-9016-3b396456d5bd)
+https://github.com/mehradans92/PoreVoyant/assets/51170839/b1de5885-73f9-45f1-87ac-10bde9fc77e7
+
 
 ## Experiment 2. Removing domain knowledge tool (Tool 1)
 Model's suggestion on MOFs with lower band gap with the GPT-4 knowledge only. We observe many chemically infeasible suggestions by the model, which confirms the importance of domain knowledge that the agent.
+![image](https://github.com/mehradans92/PoreVoyant/assets/51170839/52e45d8b-f9bf-447c-9016-3b396456d5bd)
 
-https://github.com/mehradans92/PoreVoyant/assets/51170839/b1de5885-73f9-45f1-87ac-10bde9fc77e7
 
 
 
