@@ -4,7 +4,8 @@ https://github.com/mehradans92/PoreVoyant/assets/51170839/55624963-d60e-4cf7-b37
 
 ## Overview
 Our AI agent looks up guidelines for designing low band gap MOFs from research papers and suggests a new MOF (likely with a lower band gap). It then checks validity of the new SMILES candidate and predicts band gap with uncertainty estimation using a surrogate ensemble of fine-tuned MOFormers.
-![image](https://github.com/mehradans92/PoreVoyant/assets/51170839/a48498f8-1a50-45e7-9a97-e37c001c88ed)
+![TOC](https://github.com/mehradans92/PoreVoyant/assets/51170839/f9fd068f-0a8c-4cff-8bac-a7053786ec15)
+
 
 ## Results
 
