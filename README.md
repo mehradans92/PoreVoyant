@@ -1,4 +1,6 @@
 # PoreVoyant
+A Chemistry-informed AI Agent for Metal-organic Framework Property Prediction
+
 
 https://github.com/mehradans92/PoreVoyant/assets/51170839/55624963-d60e-4cf7-b377-e6502ea6f85d
 
