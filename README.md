@@ -5,7 +5,7 @@ A Chemistry-informed AI Agent for Metal-organic Framework Property Prediction
 https://github.com/mehradans92/PoreVoyant/assets/51170839/55624963-d60e-4cf7-b377-e6502ea6f85d
 
 ## Overview
-Our AI agent looks up guidelines for designing low band gap MOFs from research papers and suggests a new MOF (likely with a lower band gap). It then checks validity of the new SMILES candidate and predicts band gap with uncertainty estimation using a surrogate ensemble of fine-tuned MOFormers.
+Our AI agent looks up guidelines for designing low band gap MOFs from research papers and suggests a new MOF (likely with a lower band gap). It then checks validity of the new SMILES candidate and predicts band gap with uncertainty estimation using a surrogate ensemble of fine-tuned MOFormers. The surrogate model constructed is a transformer (MOFormer) that has been pre trained through self-supervised and representation learning on 16k BW20K entries. The pretrained weights are transferred, in which it is finetuned on an ensemble of 5 transformers to get the predicted mean band gap and uncertainty. For reference, our transformer’s MAE is ~0.467, whereas MOFormer’s MAE is ~0.387 (they pretrained on 400k entries).
 ![TOC](https://github.com/mehradans92/PoreVoyant/assets/51170839/f9fd068f-0a8c-4cff-8bac-a7053786ec15)
 
 
